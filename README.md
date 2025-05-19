@@ -2,21 +2,30 @@
 
 ## UML
 
-| _Animal_       |
-| -------------- |
-| - name: String |
-| - age: Number  |
-| -------------- |
-| + show: void   |
-| + sound: void  |
+```mermaid
+classdiagram
+    animal <|-- dog
+    animal <|-- cat
+    zoo o-- animal
 
-| Dog |
+    class animal {
+        -name: string
+        -age: number
+        +show() void
+        +sound() void
+    }
 
-| Cat |
+    class dog {
+        +sound() void
+    }
 
-| Zoo               |
-| ----------------- |
-| name: String      |
-| animals: Animal[] |
-| ----------------- |
-| showAnimals: void |
+    class cat {
+        +sound() void
+    }
+
+    class zoo {
+        -name: string
+        -animals: animal[]
+        +showanimals() void
+    }
+```
