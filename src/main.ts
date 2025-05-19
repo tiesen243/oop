@@ -1,18 +1,13 @@
 import { Cat } from "@/cat";
 import { Dog } from "@/dog";
+import { Zoo } from "@/zoo";
 
-class Main {
-  public static main() {
-    const gg = new Dog({ name: "Goldenglow", age: 10 });
-    gg.show();
-    gg.sound();
-    console.log(gg.toString());
+(function main() {
+  const zoo = new Zoo("Ac nai", []);
+  zoo.add(new Dog("Goldenglow", 20));
+  zoo.add(new Cat("Pepe", 19));
 
-    const pepe = new Cat({ name: "Pepe", age: 5 });
-    pepe.show();
-    pepe.sound();
-    console.log(pepe.toString());
-  }
-}
-
-Main.main();
+  console.log(zoo.toString());
+  console.log("Animals in the zoo:");
+  zoo.showAnimals();
+})();

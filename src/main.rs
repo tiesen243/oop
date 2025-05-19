@@ -1,13 +1,11 @@
-use oop::{Animal, Cat, Dog};
+use oop::{Cat, Dog, Zoo};
 
 fn main() {
-    let gg = Dog::new(String::from("Goldenglow"), 5);
-    gg.show();
-    gg.sound();
-    println!("{}", gg.to_string());
+    let mut zoo = Zoo::new(String::from("Ac nai"), vec![]);
+    zoo.add(Box::new(Dog::new(String::from("Goldenglow"), 20)));
+    zoo.add(Box::new(Cat::new(String::from("Pepe"), 19)));
 
-    let pepe = Cat::new(String::from("Pepe"), 19);
-    pepe.show();
-    pepe.sound();
-    println!("{}", pepe.to_string());
+    println!("{}", zoo.to_string());
+    println!("Animals in the zoo:");
+    zoo.show_animals();
 }

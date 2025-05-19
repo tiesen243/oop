@@ -5,11 +5,13 @@ pub struct Cat {
     age: u32,
 }
 
-impl Animal for Cat {
-    fn new(name: String, age: u32) -> Self {
+impl Cat {
+    pub fn new(name: String, age: u32) -> Self {
         Cat { name, age }
     }
+}
 
+impl Animal for Cat {
     fn show(&self) -> () {
         println!("Hi, I'm {}!, I'm {} years old!", self.name, self.age);
     }
@@ -18,7 +20,15 @@ impl Animal for Cat {
         println!("Meow!");
     }
 
+    fn name(&self) -> &str {
+        &self.name
+    }
+
+    fn age(&self) -> u32 {
+        self.age
+    }
+
     fn to_string(&self) -> String {
-        format!("Cat[name: {}, age: {}]", self.name, self.age)
+        format!("Cat[name={}, age={}]", self.name, self.age)
     }
 }

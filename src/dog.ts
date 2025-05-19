@@ -4,10 +4,10 @@ export class Dog extends Animal {
   protected _name: string;
   protected _age: number;
 
-  constructor(parameters: { name: string; age: number }) {
+  constructor(name: string, age: number) {
     super();
-    this._name = parameters.name;
-    this._age = parameters.age;
+    this._name = name;
+    this._age = age;
   }
 
   public show(): void {
@@ -19,6 +19,6 @@ export class Dog extends Animal {
   }
 
   public toString(): string {
-    return `Dog[name: ${this._name}, age: ${this._age}]`;
+    return `Dog[name=${this._name}, age=${this._age}]`;
   }
 }
