@@ -3,29 +3,23 @@
 ## UML
 
 ```mermaid
-classdiagram
-    animal <|-- dog
-    animal <|-- cat
-    zoo o-- animal
-
-    class animal {
-        -name: string
-        -age: number
-        +show() void
-        +sound() void
+classDiagram
+    Animal <|-- Cat
+    Animal <|-- Dog
+    Zoo o-- Animal
+    Animal : - String name
+    Animal : - int age
+    Animal: + show() void
+    Animal: + sound() void
+    class Cat {
+        + sound() void
     }
-
-    class dog {
-        +sound() void
+    class Dog {
+        + sound() void
     }
-
-    class cat {
-        +sound() void
-    }
-
-    class zoo {
-        -name: string
-        -animals: animal[]
-        +showanimals() void
+    class Zoo {
+        - String name
+        - Animal[] animals
+        + showAnimals() void
     }
 ```
