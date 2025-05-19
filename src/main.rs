@@ -1,10 +1,4 @@
-mod animal;
-mod cat;
-mod dog;
-
-use crate::animal::Animal;
-use crate::cat::Cat;
-use crate::dog::Dog;
+use oop::{Animal, Cat, Dog};
 
 fn main() {
     let gg = Dog::new(String::from("Goldenglow"), 5);
