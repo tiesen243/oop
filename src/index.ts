@@ -1,10 +1,17 @@
-import type { Animal } from "./Animal";
-import { Dog } from "./Dog";
+import { Cat } from "@/cat";
+import { Dog } from "@/dog";
 
 class Main {
   public static main() {
-    const shiba: Animal = new Dog({ name: "Shabi", age: 10 });
-    shiba.show();
+    const gg = new Dog({ name: "Goldenglow", age: 10 });
+    gg.show();
+    gg.sound();
+    console.log(gg.toString());
+
+    const pepe = new Cat({ name: "Pepe", age: 5 });
+    pepe.show();
+    pepe.sound();
+    console.log(pepe.toString());
   }
 }
 
