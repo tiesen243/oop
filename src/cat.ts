@@ -1,8 +1,8 @@
 import { Animal } from "@/animal";
 
 export class Cat extends Animal {
-  private _name: string;
-  private _age: number;
+  protected _name: string;
+  protected _age: number;
 
   constructor(parameters: { name: string; age: number }) {
     super();
@@ -20,6 +20,6 @@ export class Cat extends Animal {
   }
 
   public toString(): string {
-    return `Cat { name: ${this._name}, age: ${this._age} }`;
+    return `Cat[name: ${this._name}, age: ${this._age}]`;
   }
 }

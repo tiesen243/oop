@@ -19,14 +19,6 @@ impl Animal for Dog {
     }
 
     fn to_string(&self) -> String {
-        use std::collections::hash_map::DefaultHasher;
-        use std::hash::{Hash, Hasher};
-
-        let mut hasher = DefaultHasher::new();
-        self.name.hash(&mut hasher);
-        self.age.hash(&mut hasher);
-        let hash = hasher.finish();
-
-        format!("Dog@{:x}[name={},age={}]", hash, self.name, self.age)
+        format!("Dog[name: {}, age: {}]", self.name, self.age)
     }
 }

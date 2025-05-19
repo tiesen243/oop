@@ -19,6 +19,6 @@ impl Animal for Cat {
     }
 
     fn to_string(&self) -> String {
-        format!("Cat {{ name: {}, age: {} }}", self.name, self.age)
+        format!("Cat[name: {}, age: {}]", self.name, self.age)
     }
 }

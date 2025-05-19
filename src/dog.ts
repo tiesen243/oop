@@ -1,12 +1,11 @@
 import { Animal } from "@/animal";
 
-export interface Dog extends Animal {}
-
-export class Dog implements Dog {
-  private _name: string;
-  private _age: number;
+export class Dog extends Animal {
+  protected _name: string;
+  protected _age: number;
 
   constructor(parameters: { name: string; age: number }) {
+    super();
     this._name = parameters.name;
     this._age = parameters.age;
   }
@@ -20,6 +19,6 @@ export class Dog implements Dog {
   }
 
   public toString(): string {
-    return `Dog { name: ${this._name}, age: ${this._age} }`;
+    return `Dog[name: ${this._name}, age: ${this._age}]`;
   }
 }
