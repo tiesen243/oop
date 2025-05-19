@@ -1,4 +1,4 @@
-use crate::animal::Animal;
+use crate::Animal;
 
 pub struct Cat {
     name: String,
